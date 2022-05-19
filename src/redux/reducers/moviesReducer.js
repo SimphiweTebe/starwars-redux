@@ -4,8 +4,9 @@ export const movieSlice = createSlice({
     name: "movies",
     initialState: {
         pending: false,
-        data: [],
-        error: false
+        data: null,
+        error: false,
+        details: null
     },
     reducers: {
         moviesLoading: (state) => {
@@ -18,9 +19,13 @@ export const movieSlice = createSlice({
         moviesError: (state) => {
             state.pending = false;
             state.error = true;
+        },
+        movieDetailSuccess: (state, action) => {
+            state.pending = false;
+            state.details = action.payload;
         }
     }
 });
 
-export const { moviesLoading, moviesSuccess, moviesError } = movieSlice.actions;
+export const { moviesLoading, moviesSuccess, movieDetailSuccess ,moviesError } = movieSlice.actions;
 export default movieSlice.reducer;
