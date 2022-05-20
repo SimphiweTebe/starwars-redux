@@ -7,7 +7,7 @@ const StyledHeader = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 10px;
+    padding: 30px;
     background-color: rgba(0,0,0,.6);
 
     h1{
