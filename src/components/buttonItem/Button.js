@@ -14,7 +14,6 @@ const StyledButton = styled.div`
         display: block;
         margin-top: 30px;
       }
-   
 `
 
 function Button({url, text}) {
