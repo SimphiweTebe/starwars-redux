@@ -12,7 +12,7 @@ function ListPage() {
 
     useEffect(()=>{
         fetchAllMovies(dispatch);
-    },[])
+    },[dispatch]);
 
     const renderHTML = ()=>{
         if(pending) return <p>loading...</p>
@@ -25,8 +25,6 @@ function ListPage() {
             );
         }
     }
-
-    console.log(data);
 
   return (
     <>

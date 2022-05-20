@@ -5,10 +5,10 @@ const StyledGrid = styled.section`
     position: relative;
     width: 95%;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto 80px;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `;
 
 function GridItem({ children }) {

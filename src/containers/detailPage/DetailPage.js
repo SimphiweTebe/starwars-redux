@@ -16,11 +16,12 @@ function DetailPage() {
   },[id, dispatch]);
 
   const renderHTML = ()=>{
-    if(pending){
+    if(pending || details === null){
       return <p>Loading...</p>
     }else if(error){
       return <p>Error</p>
     }
+    
     return (
       <>
       <HeaderSection 
