@@ -13,6 +13,8 @@ const StyledCard = styled.div`
     h4{
         font-size: 1.8rem;
         margin-bottom: 5px;
+        font-weight: 500;
+        color: #DBA90E;
     }
     h5{
         font-size: 1.4rem;

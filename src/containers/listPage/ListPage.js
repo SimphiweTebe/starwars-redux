@@ -5,6 +5,7 @@ import GridItem from '../../components/gridItem/GridItem';
 import HeroItem from './HeroItem';
 import { fetchAllMovies } from '../../services/MovieService';
 import SortMovies from '../../components/sorterItem/SortMovies';
+import LoaderItem from '../../components/loaderItem/LoaderItem';
 
 function ListPage() {
 
@@ -16,13 +17,15 @@ function ListPage() {
     },[dispatch]);
 
     const renderHTML = ()=>{
-        if(pending) return <p>loading...</p>
+        if(pending) return <LoaderItem />
         if(error) return <p>error</p>
         if(data !== null){
             return (
-                data.map((movie, index) => (
-                    <CardItem key={index} movie={movie} id={index + 1}/>
-                ))
+                <GridItem>
+                    {data.map((movie, index) => (
+                        <CardItem key={index} movie={movie} id={index + 1}/>
+                    ))}
+                </GridItem>
             );
         }
     }
@@ -31,9 +34,7 @@ function ListPage() {
     <>
         <HeroItem />
         <SortMovies />
-        <GridItem>
-            { renderHTML() }
-        </GridItem>
+        { renderHTML() }
     </>
   )
 }

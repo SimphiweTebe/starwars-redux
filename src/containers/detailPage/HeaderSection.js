@@ -14,6 +14,8 @@ const StyledHeader = styled.div`
 
     h1{
         font-size: 3rem;
+        font-weight: 500;
+        color: #DBA90E;
     }
     h3{
         font-size: 1.6rem;

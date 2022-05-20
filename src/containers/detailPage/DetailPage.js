@@ -5,6 +5,7 @@ import { fetchMovie} from '../../services/MovieService';
 import Container from '../../components/container/Container';
 import HeaderSection from './HeaderSection';
 import DetailGrid from './DetailGrid';
+import LoaderItem from '../../components/loaderItem/LoaderItem';
 
 function DetailPage() {
   const {id} = useParams();
@@ -13,11 +14,12 @@ function DetailPage() {
 
   useEffect(()=>{
     fetchMovie(id, dispatch);
+    window.scrollTo(0,0);
   },[id, dispatch]);
 
   const renderHTML = ()=>{
     if(pending || selected_movie === null){
-      return <p>Loading...</p>
+      return <LoaderItem />
     }else if(error){
       return <p>Error</p>
     }
