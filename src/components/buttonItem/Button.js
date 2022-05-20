@@ -12,6 +12,7 @@ const StyledButton = styled.div`
         text-align: center;
         border-radius: 30px;
         display: block;
+        margin-top: 30px;
       }
    
 `

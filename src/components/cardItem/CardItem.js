@@ -8,6 +8,7 @@ const StyledCard = styled.div`
     display: flex;
     flex-direction: column;
     background-color: rgba(0,0,0,.6);
+    border-radius: 2px;
 
     h4{
         font-size: 1.8rem;
@@ -17,9 +18,6 @@ const StyledCard = styled.div`
         font-size: 1.4rem;
         font-weight: 500;
         margin-bottom: 20px;
-    }
-    a{
-        margin-top: 30px;
     }
 
     @media screen and (min-width: 720px){

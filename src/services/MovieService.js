@@ -12,6 +12,15 @@ export const fetchAllMovies = async (dispatch)=> {
     }
 }
 
+export const sortMovieList = async (movies, dispatch)=> {
+    dispatch(moviesLoading());
+    try {
+         dispatch(moviesSuccess(movies));
+    } catch (error) {
+        dispatch(moviesError(error));
+    }
+}
+
 export const fetchMovie = async (id, dispatch)=> {
     dispatch(moviesLoading());
     try {

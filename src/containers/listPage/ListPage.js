@@ -4,6 +4,7 @@ import CardItem from '../../components/cardItem/CardItem';
 import GridItem from '../../components/gridItem/GridItem';
 import HeroItem from './HeroItem';
 import { fetchAllMovies } from '../../services/MovieService';
+import SortMovies from '../../components/sorterItem/SortMovies';
 
 function ListPage() {
 
@@ -29,6 +30,7 @@ function ListPage() {
   return (
     <>
         <HeroItem />
+        <SortMovies />
         <GridItem>
             { renderHTML() }
         </GridItem>

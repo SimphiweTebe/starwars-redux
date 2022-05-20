@@ -18,6 +18,10 @@ const StyledDetails = styled.div`
         li{
             min-width: 200px;
         }
+
+        a{
+            margin-top: 30px;
+        }
     }
 
     h4{

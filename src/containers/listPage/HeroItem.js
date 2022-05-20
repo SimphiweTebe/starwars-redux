@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 const StyledHero = styled.header`
     
-    height: 40vh;
+    height: 35vh;
     width: 95%;
     max-width: 1200px;
     margin: auto;
-    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -2,21 +2,21 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchMovie} from '../../services/MovieService';
-import Container from './Container';
+import Container from '../../components/container/Container';
 import HeaderSection from './HeaderSection';
 import DetailGrid from './DetailGrid';
 
 function DetailPage() {
   const {id} = useParams();
   const dispatch = useDispatch();
-  const { pending, error, details } = useSelector(state => state.movies);
+  const { pending, error, selected_movie } = useSelector(state => state.movies);
 
   useEffect(()=>{
     fetchMovie(id, dispatch);
   },[id, dispatch]);
 
   const renderHTML = ()=>{
-    if(pending || details === null){
+    if(pending || selected_movie === null){
       return <p>Loading...</p>
     }else if(error){
       return <p>Error</p>
@@ -25,17 +25,17 @@ function DetailPage() {
     return (
       <>
       <HeaderSection 
-        title={details?.title} 
-        director={details?.director}
-        producer={details?.producer}
-        release_date={details?.release_date}
-        description={details?.opening_crawl}
+        title={selected_movie?.title} 
+        director={selected_movie?.director}
+        producer={selected_movie?.producer}
+        release_date={selected_movie?.release_date}
+        description={selected_movie?.opening_crawl}
       />
-      {details?.characters && <DetailGrid content={details.characters} title="Characters" />}
-      {details?.planets && <DetailGrid content={details?.planets} title="Planets" />}
-      {details?.species && <DetailGrid content={details?.species} title="Species" />}
-      {details?.starships && <DetailGrid content={details?.starships} title="Starships" />}
-      {details?.vehicles && <DetailGrid content={details?.vehicles} title="Vehicles" />}
+      {selected_movie?.characters && <DetailGrid content={selected_movie.characters} title="Characters" />}
+      {selected_movie?.planets && <DetailGrid content={selected_movie?.planets} title="Planets" />}
+      {selected_movie?.species && <DetailGrid content={selected_movie?.species} title="Species" />}
+      {selected_movie?.starships && <DetailGrid content={selected_movie?.starships} title="Starships" />}
+      {selected_movie?.vehicles && <DetailGrid content={selected_movie?.vehicles} title="Vehicles" />}
       </>
     )
   }
